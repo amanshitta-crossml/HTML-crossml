@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Form</title>
+<style>
+form{
+	align: center;
+	border: 2px solid;
+	margin-left: 10px;
+	width: 40%;
+	background: #dcdcdc;
+
+}
+	h4{
+		font-family: sans-serif;
+	}
+
+	fieldset{
+		border: none;
+		margin: none;
+	}
+
+	fieldset .small_110{
+		width: 110px;
+	}
+
+	fieldset .small_opt{
+		width: 90px;
+	}
+
+	fieldset select,
+	fieldset input{
+		width: 200px;
+	}
+
+	fieldset #gender_fl,
+	fieldset #gender_ml{
+		width: 10px;
+	}
+	.btn{
+		width: 110px;
+	}
+
+	.gender{
+		float: none;
+		width:20px;
+	}
+	label{
+		width: 126px;
+		float: left;
+	}
+	.help{
+		padding-left: 126px;
+		width: 300px;
+		font-size: 12px;
+		font-family: serif;
+
+	}
+	abbr{
+		border-radius: 2px;
+		
+	}
+</style>
+</head>
+
+<body>
+	<form method="GET" action="ok.html">
+		
+		<h4>Personal Information</h4>
+
+		<fieldset>
+		<label for="f_name">First Name:</label>
+		<input type="text" name="f_name" id="f_name" required>
+		<br><br>
+		</fieldset>
+		<fieldset>
+		<label for="l_name">Last Name:</label>
+		<input type="text" name="l_name" id="l_name" required><br><br>
+		</fieldset>
+		<fieldset>
+		<label for="dob">Date Of Birth :</label>
+			<input type="date" required><abbr title="Enter First Name">
+				<img class="h-img" src="help.png" width="20px" height="18px" alt="?"></abbr><br><br>
+		</fieldset>
+		<fieldset>
+		<label for="gender"><b>Gender:</b></label>
+		<label class="gender" for="gender_m">Male</label>
+		<input class = "gender" type="radio" name="gender" id="gender_m" value="Male">
+
+		<label class="gender" for="gender_f">Female</label>
+		<input class = "gender" type="radio" name="gender" id="gender_f" value="Female">
+
+		<label class="gender" for="gender_x">Other</label>
+		<input class = "gender" type="radio" name="gender" id="gender_x" value="Others">
+
+		</fieldset>
+		
+
+		<h4>Account Information</h4>
+		<fieldset>
+		
+		<label for="email">Email: </label>
+		<input type="email" name="email" id="email"><br><br>
+		</fieldset>
+		<fieldset>
+		<label for="re_email">Re-Type Email: </label>
+		<input type="email" name="re_email" id="re_email"><br><br>
+		</fieldset>
+		<fieldset>
+		<label for="password">Password: </label>
+		<input type="password" name="password" id="password" width="120">
+		<p class="help"> <b>Min.8 char,1 num,Case sensitive </b></p> <br><br>
+		</fieldset>
+		<fieldset>
+		<label for="re_password">Re-Type Password: </label>
+		<input type="password" name="re_password" id="re_password"><br><br>
+		</fieldset>
+		<fieldset>
+		<label for="sec_ques">Security Question: </label>
+		<select>
+			<option>Set a Security Question</option>
+			<option value="pet_name">First Pet Name ?</option>
+			<option value="first_date">Where did you go on first date ?</option>
+			<option value="fathers_dob">Fathers Date of birth ?</option>
+		</select><br><br>
+		</fieldset>
+		<fieldset>
+		<label for="sec_ans">Security Answer: </label>
+		<input type="text" name="sec_ans" id="sec_ans">
+		<abbr title="For Account Recovery. Never disclose to anyone else!">
+				<img class="h-img" src="help.png" width="20px" height="18px" alt="?"></abbr>
+		</fieldset>
+		
+
+		<h4>Contact Information </h4>
+		<fieldset>
+		<label for="address">Address: </label>
+		<input type="text" name="addr" id="address"><br><br>
+		</fieldset>
+		<fieldset>
+		<label for="city">City: </label>
+		<input type="text" name="city" id="city"><br><br>
+		</fieldset>
+		<fieldset>
+		<label for="state">State: </label>
+		<select>
+			<option value="Himachal Pradesh" > Himachal Pradesh </option>
+			<option value="Punjab"> Punjab </option>
+			<option value="haryana"> Haryana </option>
+			<option value="delhi"> Delhi </option>
+		</select><br><br>
+		</fieldset>
+		<fieldset>
+		<label for="zip_code">Zip Code: </label>
+		<input type="number" name="zip_code" id="zip_code"><br><br>
+		</fieldset>
+		<fieldset>
+
+		<label for="phone">Phone Number: </label>
+		<input type="tel" class="small_110" name="phone_num" id="phone" placeholder="No Spaces or dash"> 
+		<select class="small_opt">
+			<option value="mob">Mobile</option>
+			<option value="landline">Landline</option>
+		</select>
+		</fieldset>
+		<fieldset>
+		
+
+	
+
+	<input class="btn" type="reset" name="Reset">
+	<button class="btn" onclick="vald()">Validate ?</button>
+	<input class="btn" type="submit" value="Submit" name="submit">
+	
+	</form>
+</body>
+<script>
+	function vald() {
+		var pwd = document.getElementById('password');
+		var re_pwd = document.getElementById('re_password');
+		// console.log(pwd);
+
+		if(re_pwd.value != pwd.value){
+			alert("Password not same !")
+		}alert("Validated !!")
+		// console.log(pwd.value);
+	}
+	
+</script>
+</html>
