@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>DropDown</title>
+
+<style>
+.dr{
+	background-color: pink;
+}
+	.dropdown{
+		position: relative;
+		display: inline-block;
+		background-color: red;
+	}
+
+	.dropdown-content{
+		position: absolute;
+		/*display: none;*/
+		background-color: blue;
+		z-index: 1;
+	}
+
+	div ul li{
+		display: inline-block;
+		margin: 0 2% 0 2%;
+	}
+
+	.dropdown:hover .dropdown-content{
+		display: block;
+		position: absolute;
+		text-align: left;
+	}
+
+	.dd-li{
+		display: block;
+	}
+	.dr ul .dropdown .dropdown-content{
+		margin: 0;
+		text-align: left;
+	}
+	
+
+</style>
+
+</head>
+
+<body>
+
+<div class="dr">
+  <ul>
+  	<li class="dropdown " style="z-index: 999;">One
+  		<ul class="dropdown-content">
+  			<li class="dd-li">i</li>
+  			<li class="dd-li">ii</li>
+  			<li class="dd-li">iii</li>
+  		</ul>
+  	</li>
+  	<li class="dropdown z2">Two
+  		<ul class="dropdown-content">
+  			<li class="dd-li">i</li>
+  			<li class="dd-li">ii</li>
+  			<li class="dd-li">iii</li>
+  		</ul>
+  	</li>
+  	<li class="dropdown z3">Three
+  		<ul class="dropdown-content">
+  			<li class="dd-li">i</li>
+  			<li class="dd-li">ii</li>
+  			<li class="dd-li">iii</li>
+  		</ul>
+  	</li>
+  	<li class="dropdown">Four
+  		<ul class="dropdown-content">
+  			<li>i</li>
+  			<li>ii</li>
+  			<li>iii</li>
+  		</ul>
+  	</li>
+  </ul>
+</div>
+
+</body>
+</html>
